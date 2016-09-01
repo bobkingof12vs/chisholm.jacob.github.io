@@ -1,68 +1,265 @@
-body{
-  background: linear-gradient(to top, #639ec9, #9bc5e4);
-  font-family: Tahoma, Geneva, sans-serif;
-}
-
-#scene{
-  position: fixed;
-  left: -50%;
-  top: 0px;
-  bottom: -10%;
-  right: -50%;
-}
-
-.layer{
+body {
   position: absolute;
-  left: 0px;
-  top: 0px;
+  font-family: Tahoma, Geneva, sans-serif;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #CC5D4C;
+  color: #222;
+  margin: 0;
+  min-width: 900px;
+  overflow: hidden;
+  text-align: center;
+  z-index: -100;
+}
+
+#bodyDiv{
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 0;
   bottom: 0px;
-  right: 0px;
+  overflow: hidden;
+  border-left: 1px solid #222;
+  border-right: 1px solid #222;
+  box-shadow: inset 16px 0px 16px -16px #CC5D4C, inset -16px 0px 16px -16px #CC5D4C;
+  background-color: #222;
+  z-index: -9;
 }
 
-#info{
+#header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  height: 194px;
+  background-color: #FFFEC6;
+  border-bottom: 1px solid #5B5847;
+  box-shadow: inset asdf0 0 1em #5B5847;
+  box-shadow: inset 6px 0px 6px -6px #5B5847, inset -6px 0px 6px -6px #5B5847;
+  z-index: -1;
+}
+
+/* menu */
+#menu{
+  position: absolute;
+  top: 140px;
+  left: 200px;
+  height: 50px;
+  width: 500px;;
+}
+#menu .button{
   position: relative;
-  border: 2px solid white;
-  border-radius: 10px;
-  max-width: 900px;
-  margin: 35px auto;
-  background-color: rgba(255,255,255,.7);
-  overflow: auto;
-}
-
-#name{
-  text-align: center;
-  width: 100%;
-  margin: 0;
-  margin-top: 5px;
-}
-
-#col1, #col2{
-  width: 40%;
   float: left;
-  padding-left: 5%;
-  padding-right: 5%;
+  margin: 10px;
+  height: 20px;
+  width: 30px;
+  border-radius: 10px;
+  border: 1px solid #222;
+  background-color: #999;
+  box-shadow: none;
+  transition-duration: .25s;
+}
+#menu .button:hover{
+  background-color: #F6FA91;
+  box-shadow: 0 0 6px 1px #aaa;
+}
+#menu .button:active{
+  background-color: #CC5D4C;
+  box-shadow: inset 0 0 3px #222;
+}
+#menu .active, #menu .active:hover{
+  background-color: #CC5D4C;
+  box-shadow: 0 0 6px 1px #FF6047;
+}
+#menu .error, #menu .error:hover{
+  background-color: #ff7f50;
+  box-shadow: 0 0 6px 1px #ff7f50;
+}
+#menu .label {
+  position: relative;
+  float: left;
+  margin: 10px;
+  width: 80px;
+  text-align: left;
 }
 
-a{
-  color: white;
-  background-color: #3072b3;
-  border-radius: 4px;
-  padding: 3px;
-  text-decoration: none;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #599bdc), color-stop(100%, #3072b3));
-  background-image: -webkit-linear-gradient(top, #599bdc 0, #3072b3 100%);
-  background-image: -moz-linear-gradient(top, #599bdc 0, #3072b3 100%);
-  background-image: -ms-linear-gradient(top, #599bdc 0, #3072b3 100%);
-  background-image: -o-linear-gradient(top, #599bdc 0, #3072b3 100%);
-  background-image: linear-gradient(top, #599bdc 0, #3072b3 100%);
-  border: 1px solid #2967a4;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
-  font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-
+/* Jacob Part */
+#jContainer{
+  position: absolute;
+  top: 5px;
+  left: 57px;
+  width: 640px;
+  height: 234px;
+}
+#jContainer h1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding-left: 174px;
+    font-size: 57px;
+    margin: 10px;
+}
+#cropJacobPic, #cropJacobPicOverlay {
+  position: absolute;
+  top: 2px;
+  left: -2px;
+  width: 168px;
+  height: 168px;
+  overflow: hidden;
+  border: 1px solid #5B5847;
+  border-radius: 15px;
+  box-shadow: inset 0 0 5px #222;
+}
+#jacobPic {
+  width: 168px;
+  height: 182px;
+  margin-top: -9px;
+  box-shadow: inset 0 0 3px #222;
+}
+#tags{
+  position: absolute;
+  text-align: left;
+  top: 82px;
+  left: 0px;
+  line-height: 28px;
+  font-size: 17px;
+  padding-top: -56px;
+  padding-left: 188px;
+  width: 400px;
 }
 
-#email{
-  padding: 0;
+/* Pages */
+.page {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 18px;
   text-align: center;
-  margin: 0;
+  transition: .8s linear;
+  padding-bottom: 100px;
+  box-shadow: 0 0 1em black;
+  background-color: #C7D1AF;
+  top: 194px;
+  bottom: 0;
+  border-top: 1px solid #222;
+  box-shadow: inset 6px 0px 6px -6px #5B5847, inset -6px 0px 6px -6px #5B5847, 0 0 3px black;
+}
+.bounce{
+  transition: easeOutBounce 1s;
+}
+.snap{
+  transition: .1s;
+}
+.tag{
+  position:absolute;
+  top: -51px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border: 1px solid #222;
+  background-color: #C7D1AF;
+  border-bottom: none;
+  width: 140px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0px -3px 3px -3px black,
+        -3px 0px 3px -3px black, 3px 0px 3px -3px black;
+}
+#aboutPage{
+  top: 194px;
+}
+#resumePage{
+  top: 400px;
+}
+#projectsPage{
+  top: 400px;
+}
+#aboutTag{
+  left: 260px;
+}
+#resumeTag{
+  left: 405px;
+}
+#projectsTag{
+  left: 550px;
+}
+.col {
+  position: relative;
+  margin: 2%;
+  display: inline-block;
+  float: left;
+}
+.rope{
+  position: absolute;
+  top: -8000px;
+  width: 5px;
+  border: 1px solid saddlebrown;
+  background: repeating-linear-gradient(
+    45deg,
+    burlywood,
+    burlywood 3px,
+    saddlebrown 3px,
+    saddlebrown 6px
+  );
+  height: 10000px;
+  z-index: -3;
+}
+
+/* boxes */
+.box{
+  position:absolute;
+  width: 80px;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px sold #333;
+  background-color: #aaa;
+  line-height: 50px;
+  padding: 0;
+}
+.box::before{
+  content: "";
+  position: absolute;
+  left:20px;
+  top: -400px;
+  height: 394px;
+  width: 4px;
+  border: 1px solid #444;
+  border-bottom: 5px solid #444;
+  z-index: -1;
+}
+.box::after{
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 30px;
+  width: 8px;
+  height: 8888px;
+  border-top: 1px solid saddlebrown;
+  background-color: #222;
+}
+#box1{
+  left: 259px;
+  top: 230px;
+  border-right: 8px solid yellow;
+}
+#box1::before{
+  background-color: yellow;
+}
+#box2{
+  left: 411px;
+  top: 230px;
+  border-right: 8px solid green;
+}
+#box2::before{
+  background-color: green;
+}
+#box3{
+  left: 563px;
+  top: 230px;
+  border-right: 8px solid red;
+}
+#box3::before{
+  background-color: red;
 }
