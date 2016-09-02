@@ -73,9 +73,17 @@ body {
   background-color: #CC5D4C;
   box-shadow: 0 0 6px 1px #FF6047;
 }
+#menu .active:hover:active{
+  background-color: #CC5D4C;
+  box-shadow: inset 0 0 3px #222;
+}
 #menu .error, #menu .error:hover{
   background-color: #ff7f50;
   box-shadow: 0 0 6px 1px #ff7f50;
+}
+#menu .error:hover:active{
+  background-color: #ff7f50;
+  box-shadow: inset 0 0 3px #222;
 }
 #menu .label {
   position: relative;
@@ -126,8 +134,65 @@ body {
   line-height: 28px;
   font-size: 17px;
   padding-top: -56px;
-  padding-left: 188px;
+  padding-left: 197px;
   width: 400px;
+}
+
+/* boxes */
+.box{
+  position:absolute;
+  width: 80px;
+  height: 55px;
+  border-radius: 5px;
+  border: 2px sold #333;
+  background-color: #aaa;
+  line-height: 55px;
+  padding: 0;
+  top: 215px;
+  box-shadow: -2px -2px 4px 2px #111;
+  background: linear-gradient(to bottom, rgba(102,102,102,1) 0%,rgba(170,170,170,1) 25%,rgba(170,170,170,1) 75%,rgba(136,136,136,1) 100%);
+}
+.box::before{
+  content: "";
+  position: absolute;
+  left:20px;
+  top: -400px;
+  height: 391px;
+  width: 6px;
+  border: 1px solid #444;
+  border-bottom: 7px solid #aaa;
+  z-index: -1;
+}
+.box::after{
+  content: "";
+  position: absolute;
+  left: -19px;
+  top: 50px;
+  width: 19px;
+  height: 8888px;
+  background-color: #222;
+  box-shadow: -3px -3px 3px 1px #222;
+}
+#box1{
+  left: 259px;
+  border-right: 8px solid #ffff44;
+}
+#box1::before{
+  background-color: #ffff44;
+}
+#box2{
+  left: 411px;
+  border-right: 8px solid #2b842b;
+}
+#box2::before{
+  background-color: #2b842b;
+}
+#box3{
+  left: 564px;
+  border-right: 8px solid #d03030;
+}
+#box3::before{
+  background-color: #d03030;
 }
 
 /* Pages */
@@ -137,7 +202,7 @@ body {
   right: 0;
   padding: 18px;
   text-align: center;
-  transition: .8s linear;
+  transition: 1.2s cubic-bezier(0.75,0,0.25,1);
   padding-bottom: 100px;
   box-shadow: 0 0 1em black;
   background-color: #C7D1AF;
@@ -146,11 +211,16 @@ body {
   border-top: 1px solid #222;
   box-shadow: inset 6px 0px 6px -6px #5B5847, inset -6px 0px 6px -6px #5B5847, 0 0 3px black;
 }
-.bounce{
-  transition: easeOutBounce 1s;
-}
 .snap{
   transition: .1s;
+}
+.pageContainer{
+  position: absolute;
+  overflow: auto;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
 .tag{
   position:absolute;
@@ -166,30 +236,6 @@ body {
   border-top-right-radius: 10px;
   box-shadow: 0px -3px 3px -3px black,
         -3px 0px 3px -3px black, 3px 0px 3px -3px black;
-}
-#aboutPage{
-  top: 194px;
-}
-#resumePage{
-  top: 400px;
-}
-#projectsPage{
-  top: 400px;
-}
-#aboutTag{
-  left: 260px;
-}
-#resumeTag{
-  left: 405px;
-}
-#projectsTag{
-  left: 550px;
-}
-.col {
-  position: relative;
-  margin: 2%;
-  display: inline-block;
-  float: left;
 }
 .rope{
   position: absolute;
@@ -207,59 +253,43 @@ body {
   z-index: -3;
 }
 
-/* boxes */
-.box{
-  position:absolute;
-  width: 80px;
-  height: 50px;
-  border-radius: 5px;
-  border: 2px sold #333;
-  background-color: #aaa;
-  line-height: 50px;
-  padding: 0;
+
+/*about page*/
+#aboutPage{
+  top: 194px;
 }
-.box::before{
-  content: "";
-  position: absolute;
-  left:20px;
-  top: -400px;
-  height: 394px;
-  width: 4px;
-  border: 1px solid #444;
-  border-bottom: 5px solid #444;
-  z-index: -1;
+#aboutTag{
+  left: 260px;
 }
-.box::after{
-  content: "";
-  position: absolute;
-  left: -8px;
-  top: 30px;
-  width: 8px;
-  height: 8888px;
-  border-top: 1px solid saddlebrown;
-  background-color: #222;
+#skills{
+  position: relative;
+  width: 50%;
+  margin-left: 25%;
 }
-#box1{
-  left: 259px;
-  top: 230px;
-  border-right: 8px solid yellow;
+.sideTitle{
+  font-weight: bold;
+  text-align: center;
 }
-#box1::before{
-  background-color: yellow;
+#skills tr td {
+  text-align: center;
 }
-#box2{
-  left: 411px;
-  top: 230px;
-  border-right: 8px solid green;
+.col {
+  position: relative;
+  margin: 2%;
+  display: inline-block;
+  float: left;
 }
-#box2::before{
-  background-color: green;
+
+
+#resumePage{
+  top: 400px;
 }
-#box3{
-  left: 563px;
-  top: 230px;
-  border-right: 8px solid red;
+#projectsPage{
+  top: 400px;
 }
-#box3::before{
-  background-color: red;
+#resumeTag{
+  left: 405px;
+}
+#projectsTag{
+  left: 550px;
 }
