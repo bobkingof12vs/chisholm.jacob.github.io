@@ -26,7 +26,7 @@ function cubicBezier(a, b, t){
   return lerp2(p1, p2, t);
 }
 var lastIndex = -1, lastPercent = 1, lastTime = 0;
-function scrollTo(index){
+function scrollToTab(index){
 
   var t = (Date.now() - lastTime) / 1200;
   if(t < .2)
@@ -61,4 +61,4 @@ function scrollTo(index){
   lastTime = Date.now();
 }
 
-scrollTo(0);
+scrollToTab(0);
