@@ -314,3 +314,44 @@ body {
 #projectsTag{
   left: 550px;
 }
+.projectFolder{
+  position: relative;
+  width: calc(100% - 42px);
+  padding: 10px;
+  background-color: #FFFEC6;
+  border: 1px solid #5B5847;
+  border-radius: 10px;
+  height: 202px;
+  margin: 10px;
+}
+
+.previewPic {
+  margin-right: 16px;
+  margin-left: calc(20% - 138.5px - 8px);
+  height: 200px;
+  width: 277px;
+  float: left;
+  border-radius: 10px;
+  border: 1px solid #5B5847;
+}
+.projectFolder div{
+  height: 200px;
+  width: 60%;
+  float: left;
+}
+.projectFolder div{
+  text-align: left;
+}
+.projectTitle{
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.githubImage{
+  margin: -5px;
+  margin-left: 0;
+  height: 28px;
+  width: 28px;
+  border: 0;
+}
