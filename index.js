@@ -52,7 +52,8 @@ function scrollToTab(index){
         lastIndex = index;
       }
       else {
-        pages[i].to = (screen.height + sudoTop);
+        var ratio = window.devicePixelRatio || 1;
+        pages[i].to = ((screen.height * ratio) + sudoTop);
         buttons[i].className = 'button';
       }
       pages[i].style.top = pages[i].to + 'px';
